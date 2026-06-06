@@ -4,7 +4,12 @@ dotenv.config();
 
 
 const transporter = nodemailer.createTransport({
-    service: "gmail", // or use host/port for SMTP
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    connectionTimeout: 30000,
+    greetingTimeout: 30000,
+    socketTimeout: 30000,
     auth: {
         user: process.env.EMAIL_USER || "aadiluser2002@gmail.com",
         pass: process.env.GMAIL_APP_PASSWORD,
@@ -18,6 +23,10 @@ export const sendMail = async ({
     text = "",
 }) => {
     try {
+
+        await transporter.verify();
+        console.log("SMTP connection successful");
+
         const info = await transporter.sendMail({
             from: `"MKHospital" <${process.env.EMAIL_USER}>`,
             to: email,
