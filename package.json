@@ -29,6 +29,7 @@
     "nanoid": "^5.1.6",
     "nodemailer": "^7.0.10",
     "p-limit": "^7.1.1",
+    "resend": "^6.12.4",
     "validator": "^13.15.20"
   }
 }
