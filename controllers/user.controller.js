@@ -285,6 +285,10 @@ export const login = async (req, res) => {
 
       //  console.log(token);
       const isProduction = process.env.NODE_ENV === "production";
+
+      console.log('NODE_ENV here:', process.env.NODE_ENV);
+      console.log('isProduction here :', isProduction);
+      console.log('FRONTEND_URL here :', process.env.FRONTEND_URL);
       res.cookie("jwt", token, {
         httpOnly: true,
         secure: isProduction,
