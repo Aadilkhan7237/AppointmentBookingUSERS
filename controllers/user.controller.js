@@ -94,10 +94,14 @@ export const googleAuthentication = async (req, res) => {
     });
     console.log(token);
     const isProduction = process.env.NODE_ENV === "production";
+
+    console.log('NODE_ENV in OAuth:', process.env.NODE_ENV);
+    console.log('isProduction in OAuth :', isProduction);
+    console.log('FRONTEND_URL in OAuth :', process.env.FRONTEND_URL);
     res.cookie("jwt", token, {
       httpOnly: true,
       secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
+      sameSite: isProduction ? "None" : "lax",
       path: "/",
     });
     res
