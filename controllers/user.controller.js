@@ -292,7 +292,7 @@ export const login = async (req, res) => {
       res.cookie("jwt", token, {
         httpOnly: true,
         secure: isProduction,
-        sameSite: isProduction ? "none" : "lax",
+        sameSite: isProduction ? "None" : "lax",
         path: "/",
       });
       res
