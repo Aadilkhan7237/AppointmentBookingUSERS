@@ -11,7 +11,7 @@ const brevo = new BrevoClient({
     environment: BrevoEnvironment.Production,
 });
 
-console.log("BREVO_API_KEY", process.env.BREVO_API_KEY);
+// console.log("BREVO_API_KEY", process.env.BREVO_API_KEY);
 
 export const sendMail = async ({
     email,

@@ -276,7 +276,7 @@ export const login = async (req, res) => {
     }
 
     if (!user.activeStatus) {
-      return res.status(status.NOT_FOUND).json({ message: "User is DEACTIVATED by admin" });
+      return res.status(status.BAD_REQUEST).json({ message: "User is DEACTIVATED by admin" });
     }
 
     const ispasswordMatched = await bcrypt.compare(password, user.password);
