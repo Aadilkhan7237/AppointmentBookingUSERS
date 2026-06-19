@@ -9,5 +9,5 @@ userRoutes.route("/sendOTP").post(sendOTP);
 userRoutes.route("/verifyOTP").post(verifyOTP);
 userRoutes.route("/register").post(register);
 userRoutes.route("/login").post(login);
-userRoutes.route("/logout").post(logout);
+userRoutes.route("/logout").post(authMiddleware,logout);
 userRoutes.route("/userInfo").get(authMiddleware,userInfo);
